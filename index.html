@@ -518,6 +518,14 @@ html,body{overflow-x:clip}
 .nav-links button{padding:10px 20px;font-size:15px;border-radius:11px}
 .nav-links button.on{box-shadow:0 1px 6px rgba(19,49,76,.12),0 0 0 1px rgba(19,49,76,.06)}
 @media(max-width:640px){.nav-links button{padding:8px 13px;font-size:13.5px}}
+.fb2{max-width:860px;grid-template-columns:1fr 1fr;gap:34px;padding-top:34px}
+.fb2 .fb-col{display:flex;flex-direction:column;gap:14px}
+.fb2 .fb-k{grid-column:auto;text-align:left;margin-bottom:2px}
+.fb2 .asa-col{border-left:1px solid var(--hair);padding-left:34px}
+.fb2 .asa-col .fb-k{color:#7346E0}
+.fb2 .asa-col .tick{background:rgba(115,70,224,.14)}
+.fb2 .asa-col .tick svg{stroke:#7346E0}
+@media(max-width:700px){.fb2{grid-template-columns:1fr;gap:26px}.fb2 .asa-col{border-left:none;padding-left:0}}
 /* ---- nav tools (prototype only) ---- */
 .nav-tools{display:none;align-items:center;gap:8px;margin-left:auto}
 body.proto .nav-tools{display:flex}
@@ -729,15 +737,16 @@ html.embed .phone{box-shadow:none}
       <div class="stat"><b>0</b><span>design changes<br>to your art direction</span></div>
     </div>
 
-    <div class="fb">
-      <div class="fb-k">Built in Adapty Flow Builder</div>
-      <div class="fb-i">
-        <span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <p><b>Millions of dollars</b> in subscription revenue pass through Flow Builder every month.</p>
+    <div class="fb fb2">
+      <div class="fb-col">
+        <div class="fb-k">Built in Adapty Flow Builder</div>
+        <div class="fb-i"><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Millions of dollars</b> in subscription revenue pass through Flow Builder every month.</p></div>
+        <div class="fb-i"><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Nearly 500 apps</b> build their paywalls and onboarding in it.</p></div>
       </div>
-      <div class="fb-i">
-        <span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-        <p><b>Nearly 500 apps</b> actively build their paywalls and onboarding in it — plenty of them past $100K MRR.</p>
+      <div class="fb-col asa-col">
+        <div class="fb-k">Run with Adapty Ads Manager</div>
+        <div class="fb-i"><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><p>Trusted by teams managing <b>$100M+ in Apple Ads spend</b>.</p></div>
+        <div class="fb-i"><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>15,985 keywords across 53 countries</b> already analysed for Fishbrain.</p></div>
       </div>
     </div>
   </div>

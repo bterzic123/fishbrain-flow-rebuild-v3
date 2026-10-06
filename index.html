@@ -518,6 +518,34 @@ html,body{overflow-x:clip}
 .nav-links button{padding:10px 20px;font-size:15px;border-radius:11px}
 .nav-links button.on{box-shadow:0 1px 6px rgba(19,49,76,.12),0 0 0 1px rgba(19,49,76,.06)}
 @media(max-width:640px){.nav-links button{padding:8px 13px;font-size:13.5px}}
+/* ---- overview: keyword table + next steps ---- */
+.band-kw{margin-top:12px!important;padding-top:12px;border-top:1px solid var(--hair);font-size:14.5px!important}
+.band-kw b{color:#7346E0;font-weight:700}
+.kwsec,.next{margin-top:96px}
+.kwt{margin-top:28px;background:#fff;border:1px solid var(--hair);border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(19,49,76,.04)}
+.kwt-h,.kwt-r{display:grid;grid-template-columns:150px 1fr 1fr 28px;gap:20px;align-items:center;padding:16px 24px;text-align:left;width:100%}
+.kwt-h{background:#FAF9FD;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.kwt-h .f{color:var(--free-ink);text-transform:none;letter-spacing:-.01em;font-size:14px;font-weight:800}
+.kwt-h .b{color:var(--bass-ink);text-transform:none;letter-spacing:-.01em;font-size:14px;font-weight:800}
+.kwt-h::after{content:''}
+.kwt-r{border-top:1px solid var(--hair);font-size:14.5px;line-height:1.45;color:var(--ink2);transition:.15s}
+.kwt-r:hover{background:#FAF9FD}
+.kwt-r .s{font-weight:700;color:var(--ink)}
+.kwt-r i{font-style:normal;color:var(--ink3);font-weight:700;transition:.15s}
+.kwt-r:hover i{color:var(--ink);transform:translateX(3px)}
+.kwhyp{display:inline-block;margin-left:6px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--free-ink);
+  border:1px dashed rgba(232,101,15,.5);border-radius:5px;padding:1px 6px;vertical-align:2px}
+@media(max-width:760px){.kwt-h{display:none}.kwt-r{grid-template-columns:1fr;gap:6px;padding:16px 20px}.kwt-r i{display:none}
+  .kwt-r span:nth-child(2)::before{content:'Free · ';font-weight:700;color:var(--free-ink)}
+  .kwt-r span:nth-child(3)::before{content:'Bass · ';font-weight:700;color:var(--bass-ink)}}
+.next-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.next-steps div{background:#fff;border:1px solid var(--hair);border-radius:20px;padding:24px 24px 26px;position:relative}
+.next-steps div::before{content:'';position:absolute;left:24px;right:24px;top:0;height:3px;border-radius:0 0 3px 3px;
+  background:linear-gradient(90deg,#E8650F,#7346E0)}
+.next-steps b{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#7346E0}
+.next-steps h4{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:8px 0 8px}
+.next-steps p{font-size:14px;line-height:1.55;color:var(--ink2);margin:0}
+@media(max-width:760px){.next-steps{grid-template-columns:1fr}}
 .fb2{max-width:860px;grid-template-columns:1fr 1fr;gap:34px;padding-top:34px}
 .fb2 .fb-col{display:flex;flex-direction:column;gap:14px}
 .fb2 .fb-k{grid-column:auto;text-align:left;margin-bottom:2px}
@@ -778,20 +806,10 @@ html.embed .phone{box-shadow:none}
 <div class="sec">
   <div class="wrap">
     <div class="sec-k">What this is</div>
-    <h2>We opened Fishbrain the way a new angler does, then rebuilt the parts we think are leaving money on the table.</h2>
-    <p class="body">Adapty powers subscriptions for <b>30,000+ apps</b>, so we get to see what moves conversion and ARPU across the market rather than inside one app. We pointed that at Fishbrain: installed it, went through the first screens, read your App Store listing and fishbrain.com/pro, and looked for gaps between what you already have and what you show people.</p>
-    <p class="body">What follows is five ideas, not fifteen. Each one is a hypothesis you can A/B test, and each one is built into a clickable prototype so you can see it rather than imagine it. <b>The prototype uses your design, not ours.</b></p>
+    <h2>We searched for Fishbrain the way a new angler does, then rebuilt what happens after the tap.</h2>
+    <p class="body">Adapty powers subscriptions for <b>30,000+ apps</b>, so we get to see what moves conversion and ARPU across the market rather than inside one app. For Fishbrain we looked at two things. First, your app: we installed it, went through the first screens and read your App Store listing and fishbrain.com/pro. Second, the App Store searches that lead to it: <b>15,985 keywords across 53 countries</b>, and the 20 competitors bidding on your name.</p>
+    <p class="body">What follows is five ideas for the flow you have, and two keyword flows that show what happens when each search gets its own version. Every one is a hypothesis you can A/B test, and all of it is clickable. <b>The prototype uses your design, not ours.</b></p>
 
-    <div class="notes">
-      <div class="note">
-        <h4>We did not redesign your app</h4>
-        <p>Every screen in the prototype is yours: your navy, your option rows, your species grid, your photo-carousel paywall with its magenta badge and trial toggle. Only the order changed, plus a few things you already own but do not show at the right moment.</p>
-      </div>
-      <div class="note">
-        <h4>You may have tested some of this</h4>
-        <p>We are working from the outside, so we cannot see your experiment history. If one of these is something you have already run, tell us and we will go deeper on the rest rather than repeat it.</p>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -801,7 +819,7 @@ html.embed .phone{box-shadow:none}
   <div class="wrap">
     <div class="sec-k">The five ideas</div>
     <h2>Ranked by what we would test first.</h2>
-    <p class="body">Each one links straight to the screen in the prototype.</p>
+    <p class="body">Each one opens that screen in both keyword flows.</p>
 
     <div class="ideas">
       <button class="idea" data-jump="offer">
@@ -859,6 +877,7 @@ html.embed .phone{box-shadow:none}
       <div class="txt">
         <div class="lab">Potential outcome</div>
         <p>Run together, these five work on the same funnel at three points: what a new angler sees first, what the paywall says to them, and what happens when they say no.</p>
+        <p class="band-kw"><b>On top of that,</b> Adapty’s Apple Ads research puts keyword-matched paywalls at <b>+30–50% conversion</b> over one paywall for every search.</p>
       </div>
       <div class="nums">
         <div><b>+25%</b><span>CR to purchase</span></div>
@@ -866,9 +885,35 @@ html.embed .phone{box-shadow:none}
       </div>
     </div>
 
+
+    <div class="kwsec">
+      <div class="sec-k">Two keywords, two flows</div>
+      <h2>The same app, answering two different searches.</h2>
+      <p class="body">The five ideas sit underneath both. On six screens, what the angler sees depends on what they typed into the App Store.</p>
+      <div class="kwt">
+        <div class="kwt-h"><span>Screen</span><span class="f">“free fishing app”</span><span class="b">“bass fishing app”</span></div>
+        <button class="kwt-r" data-kwjump="search"><span class="s">App Store</span><span>Ad screenshots say “Start free”</span><span>Ad screenshots show a bass, lures and bass catches</span><i>→</i></button>
+        <button class="kwt-r" data-kwjump="welcome"><span class="s">Welcome</span><span>“Free to start” · Start free</span><span>“Catch more bass” · Find bass near me</span><i>→</i></button>
+        <button class="kwt-r" data-kwjump="species"><span class="s">Species</span><span>Your grid, unchanged</span><span>Bass first, Largemouth already picked</span><i>→</i></button>
+        <button class="kwt-r" data-kwjump="payoff"><span class="s">Your water</span><span>What stays free, and what Pro opens</span><span>Every line about bass on their water</span><i>→</i></button>
+        <button class="kwt-r" data-kwjump="paywall"><span class="s">Paywall</span><span>7-day trial on by default, US$0.22 a day <span class="kwhyp">Hypothesis</span></span><span>Carousel rewritten for bass, 3-day trial kept</span><i>→</i></button>
+        <button class="kwt-r" data-kwjump="offer"><span class="s">Offer on close</span><span>Keep using Fishbrain free, or go monthly</span><span>Free vs Pro table led by bass features</span><i>→</i></button>
+      </div>
+    </div>
+
+    <div class="next">
+      <div class="sec-k">What happens next</div>
+      <h2>From first call to first test in two weeks.</h2>
+      <div class="next-steps">
+        <div><b>Day 1</b><h4>Brand defense live</h4><p>Your ad takes back the top slot when people search “Fishbrain”.</p></div>
+        <div><b>Week 1</b><h4>Keyword flows live</h4><p>After a one-time SDK setup, free and bass searches get their own onboarding and paywall. No app release.</p></div>
+        <div><b>Week 2</b><h4>A/B tests running</h4><p>Every keyword measured on revenue, not installs, with tests running per keyword.</p></div>
+      </div>
+    </div>
+
     <div class="cta-row">
-      <div class="qr"><img src="img/qr.svg?v=1" alt="QR code for the prototype"><span><b>Or open it on your phone</b>Scan to try the flow in your hand.</span></div>
-      <button class="bigbtn" data-view="proto">Open the prototype
+      <div class="qr"><img src="img/qr.svg?v=1" alt="QR code for the prototype"><span><b>Or open it on your phone</b>Scan to try both flows in your hand.</span></div>
+      <button class="bigbtn" data-view="proto">Open both keyword flows
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
     </div>
@@ -877,7 +922,7 @@ html.embed .phone{box-shadow:none}
 
 <div class="foot">
   <div class="wrap">
-    Impact ranges are Adapty's expected effect from teardowns and A/B tests across subscription apps — not measured lift for Fishbrain. Every price, rating, quote and feature line here and in the prototype comes from Fishbrain's own App Store listing, fishbrain.com, fishbrain.com/pro and in-app screens. Photography is taken from your App Store screenshots. Apple Ads figures come from Adapty’s Fishbrain research at asa.adapty.io/fishbrain. The 7-day trial in the “free fishing app” flow is a hypothesis: Fishbrain sells a 3-day trial today.
+    Impact ranges are Adapty's expected effect from teardowns and A/B tests across subscription apps, not measured lift for Fishbrain. Every price, rating, quote and feature line here and in the prototype comes from Fishbrain's own App Store listing, fishbrain.com, fishbrain.com/pro and in-app screens. Photography is taken from your App Store screenshots. Apple Ads figures come from Adapty’s Fishbrain research at asa.adapty.io/fishbrain. The 7-day trial in the “free fishing app” flow is a hypothesis: Fishbrain sells a 3-day trial today.
   </div>
 </div>
 </div><!-- /view-over -->
@@ -1671,7 +1716,7 @@ function paintPanel(){
     h += '<div class="pn-kept"><b>Your design, unchanged.</b> '+d.kept+'</div>';
   }
   if(S.lang!=='en') h += '<div class="pn-kept"><b>Language.</b> Screens are shown in '+(S.lang==='sv'?'Swedish':'Spanish')+' to show one flow serving every market. Translated by us; store prices stay as published in US dollars, and the reviews stay verbatim in English.</div>';
-  h += '<div class="pn-foot">Ranges are Adapty’s expected effect from tests across 30,000+ subscription apps — not measured lift for Fishbrain. '
+  h += '<div class="pn-foot">Ranges are Adapty’s expected effect from tests across 30,000+ subscription apps, not measured lift for Fishbrain. '
      + 'Prices, ratings, quotes and feature lines come from your own published material.</div>';
   document.getElementById('panel').innerHTML = h;
 }
@@ -1827,6 +1872,9 @@ function showView(v){
 document.querySelectorAll('[data-view]').forEach(function(b){ b.addEventListener('click',function(){ showView(b.dataset.view); }); });
 document.querySelectorAll('.idea[data-jump]').forEach(function(b){
   b.addEventListener('click',function(){ showView('proto'); hostJump(b.dataset.jump); });
+});
+document.querySelectorAll('[data-kwjump]').forEach(function(b){
+  b.addEventListener('click',function(){ showView('proto'); hostJump(b.dataset.kwjump); });
 });
 document.querySelectorAll('[data-demo]').forEach(function(b){ b.addEventListener('click',function(){ showView('proto'); hostDemo(); }); });
 

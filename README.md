@@ -1,4 +1,4 @@
-# Growth Audit — Fishbrain (volume 3: Apple Ads keyword flows)
+# Search to Pro · Fishbrain (Growth Audit volume 3: Apple Ads keyword flows)
 
 The five ranked ideas from volume 2, plus two versions of Fishbrain's onboarding and paywall side by side: one for people who searched "free fishing app" on the App Store, one for people who searched "bass fishing app".
 

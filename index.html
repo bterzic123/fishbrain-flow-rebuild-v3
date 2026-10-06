@@ -473,6 +473,13 @@ a{color:inherit}
 .pn-sep{height:1px;background:var(--panel-line);margin:26px 0}
 .hidden{display:none !important}
 
+/* ============ v3: lavender mist page, lit like the ASA box ============ */
+:root{--bg:#F4F2FA}
+body{background:radial-gradient(60% 50% at 0% 0%,rgba(115,70,224,.08),transparent 70%),
+  radial-gradient(55% 45% at 100% 100%,rgba(232,101,15,.07),transparent 70%),#F4F2FA;background-attachment:fixed}
+.nav{background:rgba(244,242,250,.86)}
+.hero::after{background:radial-gradient(40% 50% at 8% 20%,rgba(115,70,224,.12),transparent 70%),
+   radial-gradient(38% 45% at 92% 18%,rgba(232,101,15,.07),transparent 70%)}
 /* ============ v3: keyword colours ============ */
 :root{--free:#E8650F;--free-bg:#FFF2E8;--free-ink:#B44A05;--bass:#7346E0;--bass-bg:#F2EDFF;--bass-ink:#5A2FC4}
 
@@ -567,19 +574,32 @@ html:not(.embed) #view-proto .stage{display:none}
 /* ---- panel ---- */
 .p3-panel{border-left:1px solid var(--hair);background:var(--panel);color:var(--panel-ink);overflow-y:auto;min-height:0}
 .p3-panel .pn{padding:24px 26px 40px}
-.sh{border:1px solid var(--panel-line);border-radius:14px;margin-bottom:24px;background:#F8FAFB}
-.sh summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:13px 15px;font-size:13px;font-weight:700}
+.sh{position:relative;overflow:hidden;border-radius:16px;margin-bottom:24px;background:#0C1B2C;color:#fff;
+  box-shadow:0 14px 30px -18px rgba(12,27,44,.6)}
+.sh::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(70% 90% at 0% 0%,rgba(115,70,224,.42),transparent 70%),radial-gradient(60% 80% at 100% 100%,rgba(232,101,15,.22),transparent 70%)}
+.sh>*{position:relative}
+.sh summary{list-style:none;cursor:pointer;padding:15px 16px 14px}
 .sh summary::-webkit-details-marker{display:none}
-.sh summary .lab{flex:1}
-.sh summary .lab small{display:block;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--panel-muted);margin-bottom:3px}
-.sh summary .chev{font-size:11px;color:var(--panel-muted);transition:transform .2s}
-.sh[open] summary .chev{transform:rotate(90deg)}
-.sh ol{list-style:none;padding:0 15px 12px;margin:0}
-.sh li{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-top:1px solid var(--panel-line);font-size:12.5px;line-height:1.4;color:#2E3D4B;cursor:pointer}
-.sh li:hover{color:var(--ink)}
-.sh li .n{font-weight:700;color:var(--panel-muted);font-size:11px;width:16px;flex:none}
+.sh .top{display:flex;align-items:flex-start;gap:10px}
+.sh .lab{flex:1;font-size:14px;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+.sh .lab small{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B9A4FF;margin-bottom:4px}
+.sh .more{flex:none;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.75);padding:5px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.2);white-space:nowrap}
+.sh[open] .more .o{display:none} .sh:not([open]) .more .c{display:none}
+.sh .lit{display:flex;align-items:center;gap:6px;margin-top:13px}
+.sh .lit button{width:30px;height:26px;border-radius:8px;font:800 11px/1 'Plus Jakarta Sans',sans-serif;
+  background:rgba(255,255,255,.08);color:rgba(255,255,255,.45);transition:.2s}
+.sh .lit button:hover{color:#fff}
+.sh .lit button.on{background:var(--accent);color:#0C1B2C;box-shadow:0 0 0 3px rgba(34,201,122,.25),0 0 18px rgba(34,201,122,.55)}
+.sh .lit span{margin-left:auto;font-size:11px;font-weight:600;color:rgba(255,255,255,.6);white-space:nowrap}
+.sh ol{list-style:none;padding:0 16px 12px;margin:0}
+.sh li{display:flex;gap:10px;align-items:baseline;padding:9px 0;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;line-height:1.4;color:rgba(255,255,255,.82);cursor:pointer}
+.sh li:hover{color:#fff}
+.sh li.on{color:#fff;font-weight:700}
+.sh li .n{font-weight:800;color:rgba(255,255,255,.4);font-size:11px;width:16px;flex:none}
+.sh li.on .n{color:var(--accent)}
 .sh li .t{flex:1}
-.sh li .o{font-weight:700;color:var(--accent-ink);font-size:11.5px;white-space:nowrap}
+.sh li .o{font-weight:700;color:#3EE690;font-size:11.5px;white-space:nowrap}
 .pn-badge{display:inline-flex;align-items:center;gap:7px;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--panel-muted)}
 .pn-badge i{width:10px;height:10px;border-radius:50%;background:linear-gradient(90deg,var(--free) 50%,var(--bass) 50%)}
 .pn-badge.same i{background:#C4CCD4}
@@ -597,7 +617,7 @@ html:not(.embed) #view-proto .stage{display:none}
 .kc .ko b.nc{font-size:13px;color:var(--panel-muted)}
 .hyptag{display:block;margin-top:10px;font-size:11.5px;line-height:1.45;font-weight:600;color:var(--free-ink);background:#fff;border:1px dashed rgba(232,101,15,.45);border-radius:8px;padding:7px 9px}
 .hyptag b{font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:10px;margin-right:4px}
-.pn-note{margin-top:14px;font-size:12.5px;line-height:1.55;color:#2E3D4B;background:#F3F6F8;border-radius:12px;padding:12px 14px}
+.pn-note{margin-top:14px;font-size:12.5px;line-height:1.55;color:#2E3D4B;background:#F4F2FA;border-radius:12px;padding:12px 14px}
 .pn-also{margin-top:20px;border-top:1px solid var(--panel-line);padding-top:16px}
 .pn-also .lab{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--panel-muted)}
 .pn-also .row{display:flex;gap:10px;align-items:baseline;margin-top:9px;font-size:13px;line-height:1.4;color:#2E3D4B;font-weight:600}
@@ -1695,8 +1715,12 @@ function kcard(flow,d){
 }
 function paintHostPanel(){
   var id=H.step, d=P3[id]||{}, b=PANEL[id]||{}, h='';
-  h+='<details class="sh"><summary><span class="lab"><small>Built into both flows</small>The 5 ideas from the audit</span><span class="chev">▸</span></summary><ol>';
-  IDEAS5.forEach(function(x){ h+='<li data-go="'+x[3]+'"><span class="n">0'+x[0]+'</span><span class="t">'+x[1]+'</span><span class="o">'+x[2]+'</span></li>'; });
+  var here=d.diff?[d.idea,d.idea2]:[b.n,b.n2]; here=here.filter(Boolean);
+  h+='<details class="sh"><summary><div class="top"><span class="lab"><small>Built into both flows</small>The 5 ideas from the audit</span>'
+    +'<span class="more"><span class="o">Show all ▾</span><span class="c">Hide ▴</span></span></div><div class="lit">';
+  IDEAS5.forEach(function(x){ h+='<button class="'+(here.indexOf(x[0])>-1?'on':'')+'" data-go="'+x[3]+'" title="'+x[1]+'">0'+x[0]+'</button>'; });
+  h+='<span>'+(here.length?'Lit = on this screen':'None on this screen')+'</span></div></summary><ol>';
+  IDEAS5.forEach(function(x){ h+='<li class="'+(here.indexOf(x[0])>-1?'on':'')+'" data-go="'+x[3]+'"><span class="n">0'+x[0]+'</span><span class="t">'+x[1]+'</span><span class="o">'+x[2]+'</span></li>'; });
   h+='</ol></details>';
   if(d.diff){
     h+='<div class="pn-badge"><i></i>'+LABEL[id]+' · differs by keyword</div><h3 class="pn-t">'+d.t+'</h3>';
@@ -1718,7 +1742,7 @@ function paintHostPanel(){
   h+='<div class="pn-foot">Ranges are Adapty’s expected effect from tests across 30,000+ subscription apps, not measured lift for Fishbrain. Prices, ratings, quotes and feature lines come from your own published material.</div>';
   var p=document.getElementById('hPanel'); var wasOpen=p.querySelector('details.sh[open]'); p.innerHTML=h;
   if(wasOpen) p.querySelector('details.sh').open=true;
-  p.querySelectorAll('li[data-go]').forEach(function(li){ li.onclick=function(){ hostJump(li.dataset.go); }; });
+  p.querySelectorAll('.sh [data-go]').forEach(function(el){ el.onclick=function(e){ e.preventDefault(); e.stopPropagation(); hostJump(el.dataset.go); }; });
 }
 function hostSeg(attr,v){ document.querySelectorAll('[data-h'+attr+']').forEach(function(b){ b.classList.toggle('on',b.getAttribute('data-h'+attr)===v); }); }
 document.querySelectorAll('[data-hlang]').forEach(function(b){ b.addEventListener('click',function(){ H.lang=b.dataset.hlang; hostSeg('lang',H.lang); sendBoth({cmd:'lang',v:H.lang}); paintHostPanel(); }); });
